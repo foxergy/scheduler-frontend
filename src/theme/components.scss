@@ -1,0 +1,8 @@
+.scheduler-button{
+    width: 100%;
+    &:hover, &:active, &:focus{
+        background: var(--ion-color-custom-rgb) !important;
+        border-radius: 4px;
+    }
+  }
+  
