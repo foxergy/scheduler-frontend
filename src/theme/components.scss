@@ -1,0 +1,42 @@
+/*
+Form-elements
+*/
+
+ion-input{
+    background: var(--ion-color-custom-gray) !important;
+    border-radius: 4px !important;
+    text-align: center !important;
+    width: 80% !important;
+    font-family: 'Typo-Round-Bold' !important;
+}
+
+.scheduler-button{
+    width: 100%;
+    &:hover, &:active, &:focus{
+        background: var(--ion-color-custom-rgb) !important;
+        border-radius: 4px;
+    }
+  }
+
+/*
+Modal
+*/
+
+.modal-header{
+    color: var(--ion-color-custom) !important;
+    font-size:28px;
+}
+
+@media only screen and (min-width: 576px) {
+    .modal-login-registration .modal-wrapper{
+        height: 25% !important;
+        min-height: 270px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .modal-login-registration .modal-wrapper{
+        height: 45% !important;
+        min-height: 500px !important;
+    }
+}

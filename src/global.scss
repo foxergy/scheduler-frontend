@@ -10,5 +10,8 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 @import './theme/fonts.scss';
+@import './theme/custom-colors.scss';
+@import './theme/components.scss';
+@import './theme/variables.scss';
 
-* {    font-family: 'Typo-Round-Bold';}
+* { font-family: 'Typo-Round-Bold';}

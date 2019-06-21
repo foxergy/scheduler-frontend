@@ -1,0 +1,18 @@
+.invisible{
+    visibility: hidden;
+    background: transparent !important;
+}   
+
+.modal-content-element{
+    margin-top: 10px;
+} 
+
+.modal-login-footer{
+ margin-top:15px;
+}
+
+@media only screen and (max-width: 576px) {
+    .invisible{
+        display: none;
+    }    
+}
