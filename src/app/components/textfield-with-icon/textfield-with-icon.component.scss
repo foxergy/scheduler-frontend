@@ -1,0 +1,28 @@
+.textfield-row{
+    border-radius: 5px;
+    padding: 4px;
+    color: var(--ion-color-custom) !important;
+    background: var(--ion-color-custom-gray) !important;
+}
+
+.textfield-icon{
+    padding: 4px;
+    color: var(--ion-color-custom) !important;
+    &-area{
+        padding: 4px;
+    }
+    &:hover{
+        cursor: pointer;
+        background: var(--ion-color-custom-gray-rgb) !important;
+    }
+}
+
+.textfield-content-text{
+    border-radius: 5px;
+    padding: 4px;
+    color: var(--ion-color-custom) !important;
+    background: var(--ion-color-custom-gray) !important;
+    &-url{
+        font-family: 'Typo-Round-Light';
+    }
+}
