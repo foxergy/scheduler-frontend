@@ -8,10 +8,13 @@ import { ModalController, ToastController } from '@ionic/angular';
 export class CreatedEventModalComponent {
   generatedUUID: string = "90jrt43w98pthre";
   url: string = "www.someurl.de/" + this.generatedUUID;
+
   constructor(public modalController: ModalController, public toastController: ToastController) { }
+
   closeModal() {
     this.modalController.dismiss();
   }
+  
   async presentToast(text: string) {
     const toast = await this.toastController.create({
       color: "primary",

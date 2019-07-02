@@ -1,11 +1,15 @@
+.modal-content-element{
+    margin-top: 10px;
+} 
+
 @media only screen and (min-width: 576px) {
-    .modal-login-form {
+    .modal-content-element-left-seperation {
         border-right: 1px solid black !important;
     }
 }
 
 @media only screen and (max-width: 576px) {
-    .modal-login-form {
+    .modal-content-element-left-seperation {
         border-bottom: 1px solid black !important;
     }
 }
