@@ -25,13 +25,13 @@ ion-input{
     }
   }
 
-/*      
+/*
 *       Modals are top level elements, 
 *       thats why their style has to be declared in the components.scss
 */
 
 .modal-main-grid{
-    width: 100%;    
+    width: 100%;
 }
 
 .modal-header{
@@ -39,7 +39,7 @@ ion-input{
     font-size:28px;
 }
 
-/*      
+/*
 *       Style for Modal, that shows up if a event was created
 */
 @media only screen and (min-width: 576px) {
@@ -64,7 +64,7 @@ ion-input{
 }
 
 
-/*      
+/*
 *       Style for Modal used for registration and login
 */
 @media only screen and (min-width: 576px) {
@@ -84,7 +84,7 @@ ion-input{
 
 
 
-/*      
+/*
 *       Style for Modal used to assign a user to a schedule
 */
 @media only screen and (min-width: 576px) {
@@ -109,7 +109,7 @@ ion-input{
 }
 
 
-/*      
+/*
 *       Style for Modal used to navigate via code
 */
 .modal-search-by-code .modal-wrapper{
