@@ -1,0 +1,16 @@
+<ion-grid class="modal-main-grid">
+  <ion-row class="modal-header"  >
+    Ihre Termin-Planung wurde erstellt
+  </ion-row>
+  <ion-row class="modal-content-element">
+    <ion-col size-xs="12" size-sm="12">
+      <app-textfield-with-icon (clickEvent)="toClipBoard(generatedUUID)" [text]="'Code:'+generatedUUID" [icon]="'clipboard'"></app-textfield-with-icon>
+    </ion-col>
+    <ion-col size-xs="12" size-sm="12">
+      <app-textfield-with-icon (clickEvent)="toClipBoard(url)" [text]="url" [icon]="'clipboard'"></app-textfield-with-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row class="modal-login-footer">
+      <ion-button (click)="closeModal()" class="scheduler-button margin-top-10" color="custom">Schliessen</ion-button>
+  </ion-row>
+</ion-grid>

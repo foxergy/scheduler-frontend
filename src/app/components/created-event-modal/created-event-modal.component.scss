@@ -1,0 +1,28 @@
+.modal-content-element{
+    text-align: center;
+    justify-content: center;
+    margin-top:10px;
+}
+
+.margin-top-10{
+    margin-top:10px;
+}
+
+.created-modal-text-indicator{
+    font-size: 2vh;
+}
+
+.modal-text-icon{
+    margin-top:20px;
+    margin-bottom: 16px;
+    padding: 4px;
+    color: var(--ion-color-custom) !important;
+    &-area{
+        padding: 4px;
+    }
+    &:hover{
+        cursor: pointer;
+        background: var(--ion-color-custom-gray) !important;
+    }
+}
+

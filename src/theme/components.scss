@@ -1,7 +1,6 @@
 /*
-Form-elements
+*       Form-elements
 */
-
 ion-input{
     background: var(--ion-color-custom-gray) !important;
     border-radius: 4px !important;
@@ -18,15 +17,45 @@ ion-input{
     }
   }
 
-/*
-Modal
-*/
 
+/*      
+*       Modals are top level elements, 
+*       thats why their style has to be declared in the components.scss
+*/
 .modal-header{
     color: var(--ion-color-custom) !important;
     font-size:28px;
 }
 
+
+/*      
+*       Style for Modal, that shows up if a event was created
+*/
+@media only screen and (min-width: 576px) {
+    .modal-created-event .modal-wrapper{
+        height: 20% !important;
+        min-height: 250px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .modal-created-event .modal-wrapper{
+        height: 20% !important;
+        min-height: 250px !important;
+    }
+}
+
+@media only screen and (max-width: 467px) {
+    .modal-created-event .modal-wrapper{
+        height: 30% !important;
+        min-height: 250px !important;
+    }
+}
+
+
+/*      
+*       Style for Modal used for registration and login
+*/
 @media only screen and (min-width: 576px) {
     .modal-login-registration .modal-wrapper{
         height: 25% !important;
@@ -41,6 +70,10 @@ Modal
     }
 }
 
+
+/*      
+*       Style for Modal used to navigate via code
+*/
 .modal-search-by-code .modal-wrapper{
     height: 15% !important;
     min-height: 160px !important;
