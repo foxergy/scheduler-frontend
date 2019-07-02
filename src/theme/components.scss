@@ -17,16 +17,27 @@ ion-input{
     }
   }
 
+  .scheduler-button-light{
+    width: 100%;
+    &:hover, &:active, &:focus{
+        background: var(--ion-color-custom-rgb-light) !important;
+        border-radius: 4px;
+    }
+  }
 
 /*      
 *       Modals are top level elements, 
 *       thats why their style has to be declared in the components.scss
 */
+
+.modal-main-grid{
+    width: 100%;    
+}
+
 .modal-header{
     color: var(--ion-color-custom) !important;
     font-size:28px;
 }
-
 
 /*      
 *       Style for Modal, that shows up if a event was created
@@ -67,6 +78,33 @@ ion-input{
     .modal-login-registration .modal-wrapper{
         height: 45% !important;
         min-height: 500px !important;
+    }
+}
+
+
+
+
+/*      
+*       Style for Modal used to assign a user to a schedule
+*/
+@media only screen and (min-width: 576px) {
+    .modal-booking-schedule .modal-wrapper{
+        height: 25% !important;
+        min-height: 280px !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .modal-booking-schedule .modal-wrapper{
+        height: 25% !important;
+        min-height: 350px !important;
+    }
+}
+
+@media only screen and (max-width: 433px) {
+    .modal-booking-schedule .modal-wrapper{
+        height: 30% !important;
+        min-height: 400px !important;
     }
 }
 

@@ -12,6 +12,13 @@
     --ion-color-custom-gray-contrast-rgb: 0,0,0;
     --ion-color-custom-gray-shade: rgb(122, 122, 122);
     --ion-color-custom-gray-tint: rgb(143, 143, 143);
+
+    --ion-color-custom-light: #fff;
+    --ion-color-custom-rgb-light: rgb(211, 211, 211);
+    --ion-color-custom-contrast-light: rgb(63, 169, 245);
+    --ion-color-custom-contrast-rgb-light: 255,255,255;
+    --ion-color-custom-shade-light: #fff;
+    --ion-color-custom-tint-light: #fff;
 }
 
 .ion-color-custom{
@@ -21,6 +28,15 @@
 --ion-color-contrast-rgb: var(--ion-color-custom-contrast-rgb) !important;
 --ion-color-shade: var(--ion-color-custom-shade) !important;
 --ion-color-tint: var(--ion-color-custom-tint) !important;
+}
+
+.ion-color-custom-light{
+    --ion-color-base: var(--ion-color-custom-light) !important;
+    --ion-color-base-rgb: var(--ion-color-custom-rgb-light) !important;
+    --ion-color-contrast: var(--ion-color-custom-contrast-light) !important;
+    --ion-color-contrast-rgb: var(--ion-color-custom-contrast-rgb-light) !important;
+    --ion-color-shade: var(--ion-color-custom-shade-light) !important;
+    --ion-color-tint: var(--ion-color-custom-tint-light) !important;
 }
 
 .ion-color-custom-gray{

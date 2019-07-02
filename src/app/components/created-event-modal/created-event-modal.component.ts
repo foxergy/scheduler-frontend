@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController, ToastController } from '@ionic/angular';
-
 @Component({
   selector: 'app-created-event-modal',
   templateUrl: './created-event-modal.component.html',
@@ -8,28 +7,27 @@ import { ModalController, ToastController } from '@ionic/angular';
 })
 export class CreatedEventModalComponent {
   generatedUUID: string = "90jrt43w98pthre";
-  url: string="www.someurl.de/"+this.generatedUUID;
+  url: string = "www.someurl.de/" + this.generatedUUID;
 
   constructor(public modalController: ModalController, public toastController: ToastController) { }
 
-  closeModal(){
+  closeModal() {
     this.modalController.dismiss();
   }
-
+  
   async presentToast(text: string) {
     const toast = await this.toastController.create({
-      color:"primary",
-      message: text+' wurde erfolgreich in Ihre Zwischenablage kopiert',
+      color: "primary",
+      message: text + ' wurde erfolgreich in Ihre Zwischenablage kopiert',
       duration: 2000
     });
     toast.present();
   }
-
   /*
   *   That is the only method to copy to a clipboard
   *   besides importing other libraries
   */
-  toClipBoard(text: string){
+  toClipBoard(text: string) {
     var el = document.createElement('textarea');
     el.value = text;
     el.setAttribute('readonly', '');
@@ -38,7 +36,7 @@ export class CreatedEventModalComponent {
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
-    document.body.removeChild(el)
+    document.body.removeChild(el);
     this.presentToast(text);
   }
 }

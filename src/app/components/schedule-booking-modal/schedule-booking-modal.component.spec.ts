@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreatedEventModalComponent } from "./created-event-modal.component";
+import { ScheduleBookingModalComponent } from './schedule-booking-modal.component';
 
-describe('CreatedEventModalComponent', () => {
-  let component: CreatedEventModalComponent;
-  let fixture: ComponentFixture<CreatedEventModalComponent>;
+describe('ScheduleBookingModalComponent', () => {
+  let component: ScheduleBookingModalComponent;
+  let fixture: ComponentFixture<ScheduleBookingModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreatedEventModalComponent ],
+      declarations: [ ScheduleBookingModalComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreatedEventModalComponent);
+    fixture = TestBed.createComponent(ScheduleBookingModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
