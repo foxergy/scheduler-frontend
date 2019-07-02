@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreatedEventModalComponent } from './created-event-modal.component';
+import { CreatedEventModalComponent } from "./created-event-modal.component";
 
 describe('CreatedEventModalComponent', () => {
   let component: CreatedEventModalComponent;
