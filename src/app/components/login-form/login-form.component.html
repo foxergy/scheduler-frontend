@@ -3,15 +3,15 @@
     Login
   </ion-row>
   <ion-row class="modal-content-element">
-      <ion-input placeholder="E-Mail" required></ion-input>
+      <ion-input placeholder="Name" required [(ngModel)]="credentials.username"></ion-input>
   </ion-row>
   <ion-row class="modal-content-element">
-      <ion-input placeholder="Passwort" type="password"required></ion-input>
+      <ion-input placeholder="Passwort" type="password" [(ngModel)]="credentials.password" required></ion-input>
   </ion-row>
   <ion-row class="modal-content-element">
       <ion-input class="invisible"></ion-input>
   </ion-row>
   <ion-row class="modal-login-footer">
-      <ion-button class="scheduler-button" color="custom">Login</ion-button>
+      <ion-button class="scheduler-button" (click)="login()" color="custom">Login</ion-button>
   </ion-row>
 </ion-grid>
