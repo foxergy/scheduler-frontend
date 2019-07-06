@@ -1,8 +1,6 @@
-import { SelectBySwipeDirective } from './select-by-swipe.directive';
-
 describe('SelectBySwipeDirective', () => {
   it('should create an instance', () => {
-    const directive = new SelectBySwipeDirective();
+    const directive = null;
     expect(directive).toBeTruthy();
   });
 });
