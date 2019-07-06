@@ -23,8 +23,8 @@
 .option-card{
     position: absolute;
     left: -380px;
-    -webkit-animation-name: easeout; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 2s ; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: easeout; 
+    -webkit-animation-duration: 2s ; 
     animation-name: easeout;
     animation-duration: 2s;
 }
@@ -32,10 +32,20 @@
 .option-card-inserted{
     position: absolute;
     left: 0px;
-    -webkit-animation-name: easein; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: easein;
+    -webkit-animation-duration: 2s; 
     animation-name: easein;
     animation-duration: 2s;
+}
+
+@keyframes easein {
+    from {left: -380px;}
+    to {left: 0px;}
+  }
+
+@keyframes easeout {
+    from {left: 0px;}
+    to {left: -380px;}
 }
 
 @-webkit-keyframes easein {
