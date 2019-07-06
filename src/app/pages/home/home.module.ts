@@ -1,3 +1,4 @@
+import { KalendarComponent } from './../../components/kalendar/kalendar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -10,6 +11,7 @@ import { LoginFormComponent } from 'src/app/components/login-form/login-form.com
 import { RegistrationFormComponent } from 'src/app/components/registration-form/registration-form.component';
 import { SearchByCodeModalComponent } from 'src/app/components/search-by-code-modal/search-by-code-modal.component';
 import { AppService } from 'src/service/http/app.service';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
   imports: [
@@ -21,17 +23,21 @@ import { AppService } from 'src/service/http/app.service';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    NgCalendarModule
   ],
   declarations: [
     HomePage, 
     LoginRegistrationModalComponent, 
     LoginFormComponent, 
-    RegistrationFormComponent, 
-    SearchByCodeModalComponent],
+    RegistrationFormComponent,
+    SearchByCodeModalComponent,
+    KalendarComponent
+  ],
     providers: [ AppService ],
   entryComponents:[
     LoginRegistrationModalComponent, 
-    SearchByCodeModalComponent]
+    SearchByCodeModalComponent
+  ]
 })
 export class HomePageModule {}
