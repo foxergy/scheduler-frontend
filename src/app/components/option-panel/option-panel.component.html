@@ -2,13 +2,13 @@
   <ion-grid class="options-main-grid">
     <ion-row>
       <ion-col size-xs="11" size-sm="11">
-        <ion-row class="modal-header"  >
+        <ion-row class="option-header"  >
           Optionen
         </ion-row>
-        <ion-row class="options-content-element margin-top-10">
+        <ion-row class="options-content-element margin-top-40">
             <ion-col size-xs="12" size-sm="12">
                 Kalendername
-                <ion-input type="text" class="options-textarea" placeholder="Name" required></ion-input>
+                <ion-input type="text" class="options-textinput" placeholder="Name" required></ion-input>
             </ion-col>
             <ion-col size-xs="6" size-sm="6">
               <ion-list>
@@ -45,8 +45,8 @@
         </ion-row>
       </ion-col>
       <ion-col class="button-col" size-xs="1" size-sm="1">
-          <ion-button *ngIf="toggle" class="scheduler-button" (click)="toggle = false" color="custom"><ion-icon name="arrow-dropleft"></ion-icon></ion-button>
-          <ion-button *ngIf="!toggle" class="scheduler-button" (click)="toggle = true" color="custom"><ion-icon name="arrow-dropright"></ion-icon></ion-button>
+          <ion-button *ngIf="toggle" class="scheduler-button expand-button" (click)="toggle = false" color="custom"><ion-icon name="arrow-dropleft"></ion-icon></ion-button>
+          <ion-button *ngIf="!toggle" class="scheduler-button expand-button" (click)="toggle = true" color="custom"><ion-icon name="arrow-dropright"></ion-icon></ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

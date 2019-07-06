@@ -1,14 +1,4 @@
-
-.button-col{
-    position: relative;
-    margin-top:50%;
-}
-
-.expand-button{
-    float: left;
-}
-
-.options-textarea{
+.options-textarea, .options-textinput{
     background: var(--ion-color-custom-rgb-light) !important;
     width:100% !important;
     border-radius: 4px;
@@ -16,44 +6,100 @@
     text-align: left
 }
 
+.option-header{
+    color: var(--ion-color-custom) !important;
+    font-size:36px;
+}
+
 .option-card-basic{
     max-width: 400px;
 }
 
-.option-card{
-    position: absolute;
-    left: -380px;
-    -webkit-animation-name: easeout; 
-    -webkit-animation-duration: 2s ; 
-    animation-name: easeout;
-    animation-duration: 2s;
+@media only screen and (max-width: 576px) {  
+    .option-card{
+        position: absolute;
+        left: -370px;
+        -webkit-animation-name: easeout; 
+        -webkit-animation-duration: 2s ; 
+        animation-name: easeout;
+        animation-duration: 2s;
+    }
+
+    .option-card-inserted{
+        position: absolute;
+        left: 0px;
+        -webkit-animation-name: easein;
+        -webkit-animation-duration: 2s; 
+        animation-name: easein;
+        animation-duration: 2s;
+    }
+
+    @keyframes easein {
+        from {left: -370px;}
+        to {left: 0px;}
+    }
+
+    @keyframes easeout {
+        from {left: 0px;}
+        to {left: -370px;}
+    }
+
+    @-webkit-keyframes easein {
+        from {left: -370px;}
+        to {left: 0px;}
+    }
+
+    @-webkit-keyframes easeout {
+        from {left: 0px;}
+        to {left: -370px;}
+    }
+
+    .button-col{
+        padding-left: 0px;
+    }
+
+    .expand-button{
+        width: 50px;
+        padding-left: 0px !important;
+        float: left;
+    }
+    .button-col{
+        position: relative;
+        margin-top:50%;
+    }    
 }
 
-.option-card-inserted{
-    position: absolute;
-    left: 0px;
-    -webkit-animation-name: easein;
-    -webkit-animation-duration: 2s; 
-    animation-name: easein;
-    animation-duration: 2s;
-}
+@media only screen and (min-width: 576px) {  
+    
+    ion-card{
+        height: 100% !important;
+    }
 
-@keyframes easein {
-    from {left: -380px;}
-    to {left: 0px;}
-  }
+    .expand-button{
+        visibility: hidden;
+    }
 
-@keyframes easeout {
-    from {left: 0px;}
-    to {left: -380px;}
-}
+    .option-card-inserted, .option-card{
+        height: 80% !important;
+        position: absolute;
+        left: 0px;
+        top: 10%;
+        -webkit-animation-name: easein;
+        -webkit-animation-duration: 2s; 
+        animation-name: easein;
+        animation-duration: 2s;
+    }
 
-@-webkit-keyframes easein {
-    from {left: -380px;}
-    to {left: 0px;}
-  }
+    .options-footer{
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
 
-@-webkit-keyframes easeout {
-    from {left: 0px;}
-    to {left: -380px;}
+    .options-main-grid{
+        margin-top: 10%;
+    }
+
+    .options-textarea{
+        min-height: 150px;
+    }
 }
