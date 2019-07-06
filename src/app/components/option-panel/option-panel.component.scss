@@ -1,0 +1,49 @@
+
+.button-col{
+    position: relative;
+    margin-top:50%;
+}
+
+.expand-button{
+    float: left;
+}
+
+.options-textarea{
+    background: var(--ion-color-custom-rgb-light) !important;
+    width:100% !important;
+    border-radius: 4px;
+    font-family: 'Typo-Round-Bold';
+    text-align: left
+}
+
+.option-card-basic{
+    max-width: 400px;
+}
+
+.option-card{
+    position: absolute;
+    left: -380px;
+    -webkit-animation-name: easeout; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s ; /* Safari 4.0 - 8.0 */
+    animation-name: easeout;
+    animation-duration: 2s;
+}
+
+.option-card-inserted{
+    position: absolute;
+    left: 0px;
+    -webkit-animation-name: easein; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: easein;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes easein {
+    from {left: -380px;}
+    to {left: 0px;}
+  }
+
+@-webkit-keyframes easeout {
+    from {left: 0px;}
+    to {left: -380px;}
+}
