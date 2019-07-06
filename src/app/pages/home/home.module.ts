@@ -9,7 +9,6 @@ import { LoginRegistrationModalComponent } from 'src/app/components/login-regist
 import { LoginFormComponent } from 'src/app/components/login-form/login-form.component';
 import { RegistrationFormComponent } from 'src/app/components/registration-form/registration-form.component';
 import { SearchByCodeModalComponent } from 'src/app/components/search-by-code-modal/search-by-code-modal.component';
-import { SurveyEventService } from 'src/service/http/survey-event.service';
 import { AppService } from 'src/service/http/app.service';
 
 @NgModule({
