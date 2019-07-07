@@ -3,10 +3,10 @@
     <ion-grid>
       <ion-row>
         <ion-col size-xs="10" size-sm="10">
-            <ion-title>{{getUserName()}}'s survey-events</ion-title>
+            <ion-title>{{headerText}}</ion-title>
         </ion-col>
         <ion-col size-xs="2" size-sm="2">
-            <ion-button *ngIf="getUserName() !== null" class="scheduler-button-light" (click)="logout()" color="custom-light">Lougout</ion-button>
+            <ion-button class="scheduler-button-light" (click)="logout()" color="custom-light">Lougout</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

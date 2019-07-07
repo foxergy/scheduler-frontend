@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-survey-event-creation-page',
@@ -7,10 +8,14 @@ import { Component } from '@angular/core';
 })
 export class SurveyEventCreationPagePage {
 
-  constructor() { console.log("somthing is completely wrong")}
+  constructor(private location: Location) { }
 
   changeInterval(eventInterval: number){
     console.log(eventInterval);
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

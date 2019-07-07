@@ -17,7 +17,7 @@
 
 @media only screen and (max-width: 576px) {  
     .option-card{
-        position: absolute;
+        position: relative;
         left: -370px;
         -webkit-animation-name: easeout; 
         -webkit-animation-duration: 2s ; 
@@ -26,7 +26,7 @@
     }
 
     .option-card-inserted{
-        position: absolute;
+        position: relative;
         left: 0px;
         -webkit-animation-name: easein;
         -webkit-animation-duration: 2s; 

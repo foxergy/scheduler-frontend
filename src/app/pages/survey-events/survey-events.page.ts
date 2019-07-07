@@ -30,4 +30,10 @@ export class SurveyEventsPage implements OnInit {
     console.log("trying to route");
     this.router.navigateByUrl('/survey-event-creation-page');
   }
+
+  getHeaderText(){
+    let user = JSON.parse(localStorage.getItem('currentUser'));
+    return 'Hallo '+user.username;
+  }
+
 }
