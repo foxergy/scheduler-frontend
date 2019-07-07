@@ -3,6 +3,7 @@ import { AppService } from 'src/service/http/app.service';
 import { User } from 'src/service/http/model/user';
 import { Router } from '@angular/router';
 import { ToastController, ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/service/security/authentication.service';
 
 @Component({
   selector: 'app-registration-form',
@@ -10,28 +11,36 @@ import { ToastController, ModalController } from '@ionic/angular';
   styleUrls: ['./registration-form.component.scss'],
 })
 export class RegistrationFormComponent {
-  user: User={username:"", email:"", password:""};
+  user: User={username:"", email:"", password:"", authdata:""};
 
-  constructor(private appService: AppService, 
+  constructor(private authService: AuthenticationService, 
     private router: Router, 
     private toastController: ToastController,
     private modalController: ModalController) { }
 
-  async presentToast(username: string) {
+  async presentToastSuccess(username: string) {
     const toast = await this.toastController.create({
       color: "success",
-      message: 'You successfully registered as: '+username,
+      message: 'Sie haben sich erfolgreich registriert: '+username,
       duration: 2000
     });
     toast.present();
   }
-
-  register(){
-    this.appService.registerUser(this.user, ()=>{
-      this.router.navigateByUrl('/home');
-      this.presentToast(this.user.username);
-      this.modalController.dismiss();
+  async presentToastError(username: string) {
+    const toast = await this.toastController.create({
+      color: "danger",
+      message: 'Username: '+ username + ' schon vergeben',
+      duration: 2000
     });
+    toast.present();
   }
-
+  register(){
+    this.authService.registerUser(this.user).subscribe(response =>{
+        this.router.navigateByUrl('/home');
+        this.presentToastSuccess(this.user.username);
+        this.modalController.dismiss();
+    },error=>{
+      this.presentToastError(this.user.username);
+    }); 
+  }
 }
