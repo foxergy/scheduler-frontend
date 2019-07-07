@@ -1,0 +1,53 @@
+<ion-card [ngClass]="{'option-card-inserted':toggle===true, 'option-card':toggle===false}" class="option-card-basic">
+  <ion-grid class="options-main-grid">
+    <ion-row>
+      <ion-col size-xs="11" size-sm="11">
+        <ion-row class="option-header"  >
+          Optionen
+        </ion-row>
+        <ion-row class="options-content-element margin-top-40">
+            <ion-col size-xs="12" size-sm="12">
+                Kalendername
+                <ion-input type="text" class="options-textinput" placeholder="Name" required></ion-input>
+            </ion-col>
+            <ion-col size-xs="6" size-sm="6">
+              <ion-list>
+                <ion-radio-group>
+                  <ion-list-header>
+                    <ion-label>Intervall</ion-label>
+                  </ion-list-header>
+                  <ion-item  (click)="intervalChanged(15)" >
+                      <ion-label>15</ion-label>
+                      <ion-radio slot="start" value="biff" checked></ion-radio>
+                    </ion-item>
+                  <ion-item  (click)="intervalChanged(30)" >
+                    <ion-label>30</ion-label>
+                    <ion-radio slot="start" value="liff" ></ion-radio>
+                  </ion-item>
+                  <ion-item  (click)="intervalChanged(60)" >
+                    <ion-label>60</ion-label>
+                    <ion-radio slot="start" value="griff"></ion-radio>
+                  </ion-item>
+                  <ion-item  (click)="intervalChanged(90)" >
+                    <ion-label>90</ion-label>
+                    <ion-radio slot="start" value="buford"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </ion-col>
+            <ion-col size-xs="12" size-sm="12">
+              Beschreibung
+              <ion-textarea placeholder="Hier Beschreibung einfügen" class="options-textarea"></ion-textarea>
+            </ion-col>
+        </ion-row>
+        <ion-row class="options-footer">
+            <ion-button class="scheduler-button" (click)="create()" color="custom">Erstellen</ion-button>
+        </ion-row>
+      </ion-col>
+      <ion-col class="button-col" size-xs="1" size-sm="1">
+          <ion-button *ngIf="toggle" class="scheduler-button expand-button" (click)="toggle = false" color="custom"><ion-icon name="arrow-dropleft"></ion-icon></ion-button>
+          <ion-button *ngIf="!toggle" class="scheduler-button expand-button" (click)="toggle = true" color="custom"><ion-icon name="arrow-dropright"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
