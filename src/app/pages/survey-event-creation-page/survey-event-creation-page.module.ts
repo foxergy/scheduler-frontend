@@ -1,27 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-
-import { IonicModule } from '@ionic/angular';
-
 import { SurveyEventCreationPagePage } from './survey-event-creation-page.page';
 import { OptionPanelComponent } from 'src/app/components/option-panel/option-panel.component';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: SurveyEventCreationPagePage
-  }
-];
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
+    IonicModule
   ],
-  declarations: [SurveyEventCreationPagePage, OptionPanelComponent]
+  declarations: [SurveyEventCreationPagePage, OptionPanelComponent, HeaderComponent],
+  exports:[HeaderComponent]
 })
 export class SurveyEventCreationPagePageModule {}

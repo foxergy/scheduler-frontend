@@ -1,13 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>survey-events</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let event of events">
-      <ion-label>{{event.name}}</ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col  size-xs="8" size-sm="8">
+              <ion-label>{{event.name}}</ion-label>
+          </ion-col>
+          <ion-col size-xs="2" size-sm="2">
+              <ion-button class="scheduler-button" (click)="login()" color="success">Edit</ion-button>
+          </ion-col>
+          <ion-col size-xs="2" size-sm="2">
+              <ion-button class="scheduler-button" (click)="login()" color="danger">Delete</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-item>
+    <ion-button class="scheduler-button" (click)="routeToCreationPage()" color="custom">Create</ion-button>
   </ion-list>
 </ion-content>

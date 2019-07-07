@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyEvent } from 'src/service/http/model/survey-event';
 import { AppService } from 'src/service/http/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-survey-events',
@@ -11,7 +12,7 @@ export class SurveyEventsPage implements OnInit {
 
   events: Array<SurveyEvent>;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, private router: Router) { }
 
   ngOnInit(): void {
     this.getSurveyEvents();
@@ -23,5 +24,10 @@ export class SurveyEventsPage implements OnInit {
         events => this.events=events);
       resolve();
     },50));
+  }
+
+  routeToCreationPage(){
+    console.log("trying to route");
+    this.router.navigateByUrl('/survey-event-creation-page');
   }
 }

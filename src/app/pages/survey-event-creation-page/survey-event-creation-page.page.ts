@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-survey-event-creation-page',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyEventCreationPagePage {
 
-  constructor() { }
+  constructor() { console.log("somthing is completely wrong")}
 
   changeInterval(eventInterval: number){
     console.log(eventInterval);
