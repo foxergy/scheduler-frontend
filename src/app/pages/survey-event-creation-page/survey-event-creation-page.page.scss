@@ -1,12 +1,24 @@
-@media only screen and (min-width: 576px) {  
+@media only screen and (min-width: 960px) {  
     .side-panel{
-        height: 100% !important;
         margin-bottom: 0px !important;
+    }
+
+    .modal-main-grid{
+        margin-left: 420px;
+        margin-top: 1%;
     }
 }
 
-@media only screen and (max-width: 576px) {  
+@media only screen and (max-width: 960px) {  
     .side-panel{
-        margin-bottom: 20%;
+        margin-bottom: 0px;
     }
+    .modal-main-grid{
+        margin-left: 40px;
+        margin-top: 1%;
+    }
+}
+
+.side-panel{
+    z-index: 2;
 }

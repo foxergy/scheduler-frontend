@@ -1,0 +1,93 @@
+.calendar-cell{
+    display: table-cell;
+    border: 1px solid var(--ion-color-custom-rgb-light);
+    height: 25px;
+    min-width: 150px;
+}
+
+.calendar-container {
+    display: table;
+    width: 90%;
+    height: 70%;
+}
+
+.calendar-header{
+    &-text-cell-offset{
+        display: table-cell;
+        min-width: 100px;
+    }
+    &-number-cell-offset{
+        display: table-cell;
+        min-width: 100px;
+    }
+    &-text-cell{
+        position: sticky;
+        top: 0;
+        left: 100px;
+        display: table-cell;
+        text-align: center;
+        background: var(--ion-color-custom-rgb-light) !important;
+        min-width: 150px;
+        font-size: 25px;
+    }
+    &-number-cell{
+        position: sticky;
+        top: 32px;
+        left: 100px;
+        background: white;
+        text-align: center;
+        display: table-cell;
+        font-size: 25px;
+    }
+}
+
+.calendar-navigation-controller{
+    &-row{
+        border-radius: 16px;
+        background-color: var(--ion-color-custom) !important;
+    }
+    &-left-col{
+        text-align: left;
+        color: white;
+        padding: 0px !important;
+        cursor: pointer;
+    }
+    &-middle-col{
+        text-align: center;
+        font-size: 3vh;
+        color: white;
+        padding: 0px !important;
+    }
+    &-right-col{
+        text-align: right;
+        color: white;
+        padding: 0px !important;
+        cursor: pointer;
+
+    }
+}
+
+.calendar-navigation-controller-icon{
+    width: 32px;
+    height: 32px;
+}
+
+.calendar-row{
+    display: table-row;
+}
+
+.calendar-time-cell{
+    position: sticky;
+    left: 0px;
+    background: white;
+    display: table-cell;
+    text-align: center;
+    border: 1px solid var(--ion-color-custom-rgb-light);
+    height: 25px;
+}
+
+.overflow-container{
+    width: 100%;
+    height: 80vh;
+    overflow: scroll;
+}

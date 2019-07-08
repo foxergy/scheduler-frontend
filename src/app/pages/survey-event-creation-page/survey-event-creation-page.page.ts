@@ -7,11 +7,11 @@ import {Location} from '@angular/common';
   styleUrls: ['./survey-event-creation-page.page.scss'],
 })
 export class SurveyEventCreationPagePage {
-
+  granularity: number= 30;
   constructor(private location: Location) { }
 
   changeInterval(eventInterval: number){
-    console.log(eventInterval);
+    this.granularity= eventInterval;
   }
 
   goBack(){

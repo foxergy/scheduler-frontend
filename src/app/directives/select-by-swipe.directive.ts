@@ -7,14 +7,31 @@ export class SelectBySwipeDirective {
 
   constructor( private renderer: Renderer2 ) { }
 
-
-  @HostListener('touchmove', ['$event'])
-  mouseLeaveEvent(event){
+//TODO ONLY CHANGE COLOR OF SPECIFIC CLASS 
+  @HostListener('touch', ['$event'])
+  touchEvent(event){
     event.preventDefault();
     const touch = event.touches[0];
-    this.renderer.setStyle(document.elementFromPoint(touch.clientX, touch.clientY), 'backgroundColor', 'blue');
 
+    let element= document.elementFromPoint(touch.clientX, touch.clientY)
+
+    if(element.classList.contains('selected')){
+      this.renderer.removeClass(document.elementFromPoint(touch.clientX, touch.clientY), 'selected');
+    }
     event.stopPropagation();
   }
 
+  @HostListener('touchmove', ['$event'])
+  touchMoveEvent(event){
+    event.preventDefault();
+    const touch = event.touches[0];
+
+    let element= document.elementFromPoint(touch.clientX, touch.clientY)
+
+    if(element.classList.contains('touchable')){
+      this.renderer.addClass(document.elementFromPoint(touch.clientX, touch.clientY), 'selected');
+    }
+    
+    event.stopPropagation();
+  }
 }

@@ -6,12 +6,10 @@ import { Directive, ElementRef, HostListener, Renderer2, Input, Output, EventEmi
 export class SelectableByMouseDirective {
 
   @Input('appSelectableByMouse') private mousedown:boolean;
-  @Output() event: EventEmitter<any>= new EventEmitter();
-  private marked: boolean=false;
-
+  //@Output() event: EventEmitter<any>= new EventEmitter();
   
   constructor(private element: ElementRef, private renderer: Renderer2) { 
-    this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'yellow');
+    this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'white');
     this.renderer.setStyle(this.element.nativeElement, 'cursor', 'pointer');
     this.renderer.setStyle(this.element.nativeElement, '-webkit-touch-callout', 'none');
     this.renderer.setStyle(this.element.nativeElement, '-webkit-user-select', 'none');
@@ -21,23 +19,21 @@ export class SelectableByMouseDirective {
     this.renderer.setStyle(this.element.nativeElement, 'user-select', 'none');
   }
 
-  @HostListener('mouseover', ['$event'])
-    mouseOverEvent(event){
-      event.preventDefault();
-      event.stopPropagation();
-      if(this.mousedown){
-        this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'blue');
-        this.marked= true;
-      }
-  }
+ @HostListener('mouseover', ['$event'])
+   mouseOverEvent(event){
+     event.preventDefault();
+     event.stopPropagation();
+     if(this.mousedown){
+       this.renderer.addClass(this.element.nativeElement, 'selected')
+     }
+ }
 
   @HostListener('mouseenter', ['$event'])
   mouseEnterEvent(event){
     event.preventDefault();
     event.stopPropagation();
     if(this.mousedown){
-      this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'blue');
-      this.marked= true;
+      this.renderer.addClass(this.element.nativeElement, 'selected')
     }
   }
 
@@ -46,8 +42,7 @@ export class SelectableByMouseDirective {
     event.preventDefault();
     event.stopPropagation();
     if(this.mousedown){
-      this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'blue');
-      this.marked= true;
+      this.renderer.addClass(this.element.nativeElement, 'selected')
     }
   }
 
@@ -55,8 +50,7 @@ export class SelectableByMouseDirective {
   mouseClickEvent(event){
     event.preventDefault();
     event.stopPropagation();
-    this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'blue');
-    this.marked= true;
+    this.renderer.addClass(this.element.nativeElement, 'selected')
   }
 }
 

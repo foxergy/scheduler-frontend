@@ -32,6 +32,7 @@ import { AppService } from 'src/service/http/app.service';
     providers: [ AppService ],
   entryComponents:[
     LoginRegistrationModalComponent, 
-    SearchByCodeModalComponent]
+    SearchByCodeModalComponent
+    ]
 })
 export class HomePageModule {}

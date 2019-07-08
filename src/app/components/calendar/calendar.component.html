@@ -1,0 +1,33 @@
+<ion-grid  class="modal-main-grid">
+  <ion-row class="calendar-navigation-controller-row">
+    <ion-col class="calendar-navigation-controller-left-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropleft"></ion-icon></ion-col>
+    <ion-col class="calendar-navigation-controller-middle-col">{{getCurrentMonth()}}</ion-col>
+    <ion-col class="calendar-navigation-controller-right-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropright"></ion-icon></ion-col>
+  </ion-row>
+  <ion-row class="calendar-navigation-controller-row margin-top-10">
+    <ion-col class="calendar-navigation-controller-left-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropleft"></ion-icon></ion-col>
+    <ion-col class="calendar-navigation-controller-middle-col">{{getCurrentWeek()}} KW</ion-col>
+    <ion-col class="calendar-navigation-controller-right-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropright"></ion-icon></ion-col>
+  </ion-row></ion-grid>
+<div class="overflow-container">
+  <div class="calendar-container">
+    <div class="calendar-row calendar-header-text">
+      <div class="calendar-header-text-cell-offset"></div>
+      <div class="calendar-header-text-cell" *ngFor="let dayAbbrevation of weekDayAbbrevations">{{dayAbbrevation}}</div>
+    </div>
+    <div class="calendar-row calendar-header-number">
+      <div class="calendar-header-number-cell-offset"></div>
+      <div class="calendar-header-number-cell" *ngFor="let day of currentWeek">{{day.getDate()}}</div>
+    </div>
+    <div appSelectBySwipe (mousedown)="mouseDown=true" (mouseup)="mouseDown=false" class="calendar-row" *ngFor="let time of hoursArray">
+      <div  class="calendar-time-cell" >{{time.hour}}:{{time.minute}}</div>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[0].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[1].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[2].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[3].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[4].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[5].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[6].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+    </div>
+  </div>
+</div>

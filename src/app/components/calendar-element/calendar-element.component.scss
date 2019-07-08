@@ -1,0 +1,13 @@
+.selected{
+    border-radius: 16px;
+    background-color: var(--ion-color-custom) !important;
+    transform: scaleY(1.2);
+}
+
+.touchable{
+    width: 100%;
+    height: 25px;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}

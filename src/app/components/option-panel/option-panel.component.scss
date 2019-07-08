@@ -15,9 +15,16 @@
     max-width: 400px;
 }
 
-@media only screen and (max-width: 576px) {  
+ion-card{
+    background-color: #ffffff;
+}
+
+@media only screen and (max-width: 960px) { 
+    ion-card{
+        top: 20%;
+    } 
     .option-card{
-        position: relative;
+        position: absolute;
         left: -370px;
         -webkit-animation-name: easeout; 
         -webkit-animation-duration: 2s ; 
@@ -26,7 +33,7 @@
     }
 
     .option-card-inserted{
-        position: relative;
+        position: absolute;
         left: 0px;
         -webkit-animation-name: easein;
         -webkit-animation-duration: 2s; 
@@ -69,7 +76,7 @@
     }    
 }
 
-@media only screen and (min-width: 576px) {  
+@media only screen and (min-width: 960px) {  
     
     ion-card{
         height: 100% !important;
@@ -84,10 +91,6 @@
         position: absolute;
         left: 0px;
         top: 10%;
-        -webkit-animation-name: easein;
-        -webkit-animation-duration: 2s; 
-        animation-name: easein;
-        animation-duration: 2s;
     }
 
     .options-footer{
