@@ -1,3 +1,4 @@
+import { KalendarComponent } from './../../components/kalendar/kalendar.component';
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { LoginRegistrationModalComponent } from 'src/app/components/login-registration-modal/login-registration-modal.component';
@@ -28,4 +29,5 @@ export class HomePage {
     });
     return await modal.present();
   }
+
 }

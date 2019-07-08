@@ -18,7 +18,8 @@ import { ErrorInterceptor } from 'src/service/security/interceptors/error.interc
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
-    AppRoutingModule],
+    AppRoutingModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
