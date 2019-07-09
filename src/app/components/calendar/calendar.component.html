@@ -1,13 +1,13 @@
 <ion-grid  class="modal-main-grid">
   <ion-row class="calendar-navigation-controller-row">
-    <ion-col class="calendar-navigation-controller-left-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropleft"></ion-icon></ion-col>
+    <ion-col class="calendar-navigation-controller-left-col"><ion-icon (click)="previousMonth()" class="calendar-navigation-controller-icon" name="md-arrow-dropleft"></ion-icon></ion-col>
     <ion-col class="calendar-navigation-controller-middle-col">{{getCurrentMonth()}}</ion-col>
-    <ion-col class="calendar-navigation-controller-right-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropright"></ion-icon></ion-col>
+    <ion-col class="calendar-navigation-controller-right-col"><ion-icon (click)="nextMonth()" class="calendar-navigation-controller-icon" name="md-arrow-dropright"></ion-icon></ion-col>
   </ion-row>
   <ion-row class="calendar-navigation-controller-row margin-top-10">
-    <ion-col class="calendar-navigation-controller-left-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropleft"></ion-icon></ion-col>
+    <ion-col class="calendar-navigation-controller-left-col"><ion-icon (click)="previousWeek()" class="calendar-navigation-controller-icon" name="md-arrow-dropleft"></ion-icon></ion-col>
     <ion-col class="calendar-navigation-controller-middle-col">{{getCurrentWeek()}} KW</ion-col>
-    <ion-col class="calendar-navigation-controller-right-col"><ion-icon class="calendar-navigation-controller-icon" name="md-arrow-dropright"></ion-icon></ion-col>
+    <ion-col class="calendar-navigation-controller-right-col"><ion-icon (click)="nextWeek()" class="calendar-navigation-controller-icon" name="md-arrow-dropright"></ion-icon></ion-col>
   </ion-row></ion-grid>
 <div class="overflow-container">
   <div class="calendar-container">

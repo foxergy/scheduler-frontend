@@ -45,6 +45,34 @@ export class CalendarComponent{
   getCurrentWeek(){
     return this.calendarService.getCurrentWeek(this.currentWeek[0]);
   }
+
+  nextWeek(){
+    this.currentWeek =  this.calendarService.getNextWeekOfDates(this.currentWeek[this.currentWeek.length-1]);
+    this.updateAbbrevations();
+  }
+
+  previousWeek(){
+    this.currentWeek =  this.calendarService.getPreviousWeekOfDates(this.currentWeek[0]);
+    this.updateAbbrevations();
+  }
+  
+  nextMonth(){
+    this.currentWeek =  this.calendarService.getNextMonthOfWeekDates(this.currentWeek[this.currentWeek.length-1]);
+    this.updateAbbrevations();
+  }
+
+  previousMonth(){
+    this.currentWeek =  this.calendarService.getPreviousMonthOfDates(this.currentWeek[0]);
+    this.updateAbbrevations();
+  }
+
+  updateAbbrevations(){
+    let newWeekDayAbbrevation = [];
+    this.currentWeek.forEach(date => {
+      newWeekDayAbbrevation.push(this.calendarService.getDayAbbreviationDE(date.getDay()));
+      this.weekDayAbbrevations= newWeekDayAbbrevation;
+    });
+  }
 }
 
 export class TimeHelper{

@@ -18,6 +18,43 @@ export class CalendarService{
         return nextDaySet;
     }
 
+    getPreviousWeekOfDates(date: Date){
+        let lastDaySet: Array<Date>= [];
+        for(var i = 6; i>0; i--){
+            let newDate = new Date(date);
+            newDate.setDate(date.getDate()-i);
+            lastDaySet.push(newDate);
+        } 
+        lastDaySet.push(date);
+        return lastDaySet;
+    }
+
+    
+    getNextMonthOfWeekDates(date: Date){
+        let nextMonthDaySet: Array<Date>= [];
+        date.setMonth(date.getMonth()+1);
+        date.setDate(1);
+        nextMonthDaySet.push(date);
+        for(var i = 1; i<7; i++){
+            let newDate = new Date(date);
+            newDate.setDate(date.getDate()+i);
+            nextMonthDaySet.push(newDate);
+        } 
+        return nextMonthDaySet;
+    }
+
+    getPreviousMonthOfDates(date: Date){
+        let lastMonthDaySet: Array<Date>= [];
+        date.setMonth(date.getMonth()-1);
+        date.setDate(1);
+        lastMonthDaySet.push(date);
+        for(var i = 1; i<7; i++){
+            let newDate = new Date(date);
+            newDate.setDate(date.getDate()+i);
+            lastMonthDaySet.push(newDate);
+        } 
+        return lastMonthDaySet;
+    }
 
     getCurrentWeek( date: Date ) {
         var tdt: any = new Date(date.valueOf());
