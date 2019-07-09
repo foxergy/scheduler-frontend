@@ -12,6 +12,7 @@ export class CalendarComponent{
   currentWeek: Array<Date>=[];
   weekDayAbbrevations: Array<string>=[];
   hoursArray:Array<TimeHelper>=[];
+  selectBySwipe: boolean=false;
   mouseDown:boolean = false;
 
   constructor(private calendarService: CalendarService) {

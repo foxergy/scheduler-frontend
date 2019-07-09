@@ -2,13 +2,30 @@
     display: table-cell;
     border: 1px solid var(--ion-color-custom-rgb-light);
     height: 25px;
-    min-width: 150px;
 }
 
 .calendar-container {
     display: table;
     width: 90%;
     height: 70%;
+}
+
+@media only screen and (min-width: 960px) {  
+    .calendar-header-text-cell{
+        min-width: 150px;
+    }
+    .calendar-cell{
+        min-width: 150px;
+    }
+}
+
+@media only screen and (max-width: 960px) {  
+    .calendar-header-text-cell{
+        min-width: 100px;
+    }
+    .calendar-cell{
+        min-width: 100px;
+    }
 }
 
 .calendar-header{
@@ -27,8 +44,8 @@
         display: table-cell;
         text-align: center;
         background: var(--ion-color-custom-rgb-light) !important;
-        min-width: 150px;
         font-size: 25px;
+        z-index: 3;
     }
     &-number-cell{
         position: sticky;
@@ -38,9 +55,9 @@
         text-align: center;
         display: table-cell;
         font-size: 25px;
+        z-index: 3;
     }
 }
-
 .calendar-navigation-controller{
     &-row{
         border-radius: 16px;
@@ -65,11 +82,10 @@
         cursor: pointer;
 
     }
-}
-
-.calendar-navigation-controller-icon{
-    width: 32px;
-    height: 32px;
+    &-icon{
+        width: 32px;
+        height: 32px;
+    }
 }
 
 .calendar-row{
@@ -84,6 +100,8 @@
     text-align: center;
     border: 1px solid var(--ion-color-custom-rgb-light);
     height: 25px;
+    z-index: 3;
+
 }
 
 .overflow-container{
