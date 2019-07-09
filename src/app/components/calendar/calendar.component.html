@@ -20,7 +20,7 @@
       <div class="calendar-header-number-cell-offset"></div>
       <div class="calendar-header-number-cell" *ngFor="let day of currentWeek">{{day.getDate()}}</div>
     </div>
-    <div [appSelectBySwipe]="selectBySwipe" (mousedown)="mouseDown=true" (mouseup)="mouseDown=false" class="calendar-row" *ngFor="let time of hoursArray">
+    <div [appSelectBySwipe]="selectBySwipe" (mousedown)="mouseDown=true" (mouseup)="mouseDown=false" class="calendar-row no-select" *ngFor="let time of hoursArray">
       <div  class="calendar-time-cell no-select" >{{time.hour}}:{{time.minute}}</div>
         <app-calendar-element class="calendar-cell" [day]="currentWeek[0].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
         <app-calendar-element class="calendar-cell" [day]="currentWeek[1].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
