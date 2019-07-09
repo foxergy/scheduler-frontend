@@ -6,7 +6,7 @@ import { Directive, ElementRef, HostListener, Renderer2, Input, Output, EventEmi
 export class SelectableByMouseDirective {
 
   @Input('appSelectableByMouse') private mousedown:boolean;
-  //@Output() event: EventEmitter<any>= new EventEmitter();
+  @Output() selectedEvent: EventEmitter<any>= new EventEmitter();
   
   constructor(private element: ElementRef, private renderer: Renderer2) { 
     this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'white');
@@ -23,8 +23,9 @@ export class SelectableByMouseDirective {
    mouseOverEvent(event){
      event.preventDefault();
      event.stopPropagation();
-     if(this.mousedown){
+     if(this.mousedown && !this.element.nativeElement.classList.contains('selected')){
        this.renderer.addClass(this.element.nativeElement, 'selected')
+       this.selectedEvent.emit();
      }
  }
 
@@ -32,25 +33,30 @@ export class SelectableByMouseDirective {
   mouseEnterEvent(event){
     event.preventDefault();
     event.stopPropagation();
-    if(this.mousedown){
+    if(this.mousedown && !this.element.nativeElement.classList.contains('selected')){
       this.renderer.addClass(this.element.nativeElement, 'selected')
+      this.selectedEvent.emit();
     }
   }
 
-  @HostListener('mouseleave', ['$event'])
-  mouseLeaveEvent(event){
-    event.preventDefault();
-    event.stopPropagation();
-    if(this.mousedown){
-      this.renderer.addClass(this.element.nativeElement, 'selected')
-    }
-  }
+ @HostListener('mouseleave', ['$event'])
+ mouseLeaveEvent(event){
+   event.preventDefault();
+   event.stopPropagation();
+   if(this.mousedown && !this.element.nativeElement.classList.contains('selected')){
+     this.renderer.addClass(this.element.nativeElement, 'selected')
+     this.selectedEvent.emit();
+   }
+ }
 
   @HostListener('click', ['$event'])
   mouseClickEvent(event){
     event.preventDefault();
     event.stopPropagation();
-    this.renderer.addClass(this.element.nativeElement, 'selected')
+    if(!this.element.nativeElement.classList.contains('selected')){
+      this.renderer.addClass(this.element.nativeElement, 'selected')
+      this.selectedEvent.emit();
+    }
   }
 }
 

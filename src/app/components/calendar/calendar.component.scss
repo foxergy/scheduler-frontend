@@ -45,7 +45,7 @@
         text-align: center;
         background: var(--ion-color-custom-rgb-light) !important;
         font-size: 25px;
-        z-index: 3;
+        z-index: 1;
     }
     &-number-cell{
         position: sticky;
@@ -55,7 +55,7 @@
         text-align: center;
         display: table-cell;
         font-size: 25px;
-        z-index: 3;
+        z-index: 1;
     }
 }
 .calendar-navigation-controller{
@@ -100,7 +100,7 @@
     text-align: center;
     border: 1px solid var(--ion-color-custom-rgb-light);
     height: 25px;
-    z-index: 3;
+    z-index: 1;
 
 }
 

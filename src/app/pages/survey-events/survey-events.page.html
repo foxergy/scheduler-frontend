@@ -2,6 +2,7 @@
 
 <ion-content>
   <ion-list>
+    <ion-button class="scheduler-button" (click)="routeToCreationPage()" color="custom">Create</ion-button>
     <ion-item *ngFor="let event of events">
       <ion-grid>
         <ion-row>
@@ -17,6 +18,5 @@
         </ion-row>
       </ion-grid>
     </ion-item>
-    <ion-button class="scheduler-button" (click)="routeToCreationPage()" color="custom">Create</ion-button>
   </ion-list>
 </ion-content>

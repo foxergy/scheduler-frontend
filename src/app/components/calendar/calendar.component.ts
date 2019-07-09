@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CalendarService } from 'src/service/local/calendar.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class CalendarComponent{
   hoursArray:Array<TimeHelper>=[];
   selectBySwipe: boolean=false;
   mouseDown:boolean = false;
+  @Output() selectedSchedule: EventEmitter<any>= new EventEmitter<any>();
 
   constructor(private calendarService: CalendarService) {
     this.currentWeek = calendarService.getNextWeekOfDates(new Date);
@@ -23,6 +24,10 @@ export class CalendarComponent{
 
    ngOnChanges(changes) {
     this.getArrayForHours();
+  }
+
+  getEvent($event: any){
+    this.selectedSchedule.emit($event);
   }
 
   getArrayForHours(){

@@ -6,6 +6,12 @@ export class Schedule{
     surveyUser: SurveyUser;
 
 
+    constructor( startTime: Array<number>, endTime: Array<number>, surveyUser: SurveyUser) {
+        this.startTime=startTime;
+        this.endTime=endTime;
+        this.surveyUser=surveyUser;
+    }
+
     getStartYear(){
         return this.startTime[0];
     }

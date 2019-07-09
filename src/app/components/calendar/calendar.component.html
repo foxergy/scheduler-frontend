@@ -22,13 +22,13 @@
     </div>
     <div [appSelectBySwipe]="selectBySwipe" (mousedown)="mouseDown=true" (mouseup)="mouseDown=false" class="calendar-row no-select" *ngFor="let time of hoursArray">
       <div  class="calendar-time-cell no-select" >{{time.hour}}:{{time.minute}}</div>
-        <app-calendar-element class="calendar-cell" [day]="currentWeek[0].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
-        <app-calendar-element class="calendar-cell" [day]="currentWeek[1].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
-        <app-calendar-element class="calendar-cell" [day]="currentWeek[2].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
-        <app-calendar-element class="calendar-cell" [day]="currentWeek[3].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
-        <app-calendar-element class="calendar-cell" [day]="currentWeek[4].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
-        <app-calendar-element class="calendar-cell" [day]="currentWeek[5].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
-        <app-calendar-element class="calendar-cell" [day]="currentWeek[6].getDate()" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[0]" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[1]" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[2]" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[3]" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[4]" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[5]" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
+        <app-calendar-element class="calendar-cell" [day]="currentWeek[6]" [mouseDown]="mouseDown" (eventClick)="getEvent($event)" [time]="time"></app-calendar-element>
     </div>
   </div>
 </div>

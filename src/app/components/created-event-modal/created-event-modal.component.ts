@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController, ToastController, NavParams } from '@ionic/angular';
+import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-created-event-modal',
   templateUrl: './created-event-modal.component.html',
   styleUrls: ['./created-event-modal.component.scss'],
 })
 export class CreatedEventModalComponent {
-  generatedUUID: string = "90jrt43w98pthre";
-  url: string = "www.someurl.de/" + this.generatedUUID;
+  generatedUUID: string = "";
+  url: string = "";
 
-  constructor(public modalController: ModalController, public toastController: ToastController) { }
+  constructor(public modalController: ModalController, public toastController: ToastController, public navParams: NavParams) { 
+    this.generatedUUID = this.navParams.get('uuid');
+    this.url = this.navParams.get('url');
+  }
 
   closeModal() {
     this.modalController.dismiss();

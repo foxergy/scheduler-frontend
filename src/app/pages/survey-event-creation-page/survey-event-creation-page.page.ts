@@ -8,6 +8,7 @@ import {Location} from '@angular/common';
 })
 export class SurveyEventCreationPagePage {
   granularity: number= 30;
+  schedules: Array<any>=[];
   constructor(private location: Location) { }
 
   changeInterval(eventInterval: number){
@@ -18,4 +19,7 @@ export class SurveyEventCreationPagePage {
     this.location.back();
   }
 
+  addSchedule($event){
+    this.schedules.push($event);
+  }
 }

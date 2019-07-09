@@ -20,7 +20,7 @@ export class SurveyEventsPage implements OnInit {
 
   async getSurveyEvents(){
     new Promise(resolve=> setTimeout(()=>{
-      this.appService.getSurveyEvents().subscribe(
+      this.appService.getSurveyEventsByUser().subscribe(
         events => this.events=events);
       resolve();
     },50));

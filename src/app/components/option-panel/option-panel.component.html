@@ -8,7 +8,7 @@
         <ion-row class="options-content-element margin-top-40">
             <ion-col size-xs="12" size-sm="12">
                 Kalendername
-                <ion-input type="text" class="options-textinput" placeholder="Name" required></ion-input>
+                <ion-input type="text" class="options-textinput" placeholder="Name" [(ngModel)]="surveyEvent.name" required></ion-input>
             </ion-col>
             <ion-col size-xs="6" size-sm="6">
               <ion-list>
@@ -18,11 +18,11 @@
                   </ion-list-header>
                   <ion-item  (click)="intervalChanged(15)" >
                       <ion-label>15</ion-label>
-                      <ion-radio slot="start" value="biff" checked></ion-radio>
+                      <ion-radio slot="start" value="biff" ></ion-radio>
                     </ion-item>
                   <ion-item  (click)="intervalChanged(30)" >
                     <ion-label>30</ion-label>
-                    <ion-radio slot="start" value="liff" ></ion-radio>
+                    <ion-radio slot="start" value="liff"checked ></ion-radio>
                   </ion-item>
                   <ion-item  (click)="intervalChanged(60)" >
                     <ion-label>60</ion-label>
@@ -37,11 +37,11 @@
             </ion-col>
             <ion-col size-xs="12" size-sm="12">
               Beschreibung
-              <ion-textarea placeholder="Hier Beschreibung einfügen" class="options-textarea"></ion-textarea>
+              <ion-textarea placeholder="Hier Beschreibung einfügen" class="options-textarea"  [(ngModel)]="surveyEvent.description"></ion-textarea>
             </ion-col>
         </ion-row>
         <ion-row class="options-footer">
-            <ion-button class="scheduler-button" (click)="showSearchByCodeModal()" color="custom">Erstellen</ion-button>
+            <ion-button class="scheduler-button" (click)="postSurveyEvent()" color="custom">Erstellen</ion-button>
         </ion-row>
       </ion-col>
       <ion-col class="button-col" size-xs="1" size-sm="1">

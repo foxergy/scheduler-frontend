@@ -2,8 +2,11 @@
   <ion-toolbar>
     <ion-grid>
       <ion-row>
-        <ion-col size-xs="10" size-sm="10">
+        <ion-col size-xs="8" size-sm="8">
             <ion-title>{{headerText}}</ion-title>
+        </ion-col>
+        <ion-col size-xs="2" size-sm="2">
+            <ion-button class="scheduler-button" (click)="back()" color="custom"><ion-icon name="arrow-dropleft"></ion-icon></ion-button>
         </ion-col>
         <ion-col size-xs="2" size-sm="2">
             <ion-button class="scheduler-button-light" (click)="logout()" color="custom-light">Logout</ion-button>
